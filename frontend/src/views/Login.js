@@ -18,7 +18,7 @@ function Login() {
   const handleLoginClick = (e) => {
     e.preventDefault();
     axios
-      .post(`${BASE_URL}/authenticate`, {
+      .post(`${BASE_URL}/v1/login`, {
         email,
         password,
       })
