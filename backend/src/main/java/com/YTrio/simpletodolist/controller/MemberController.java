@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
+@RequestMapping("/hello")
 public class MemberController {
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
