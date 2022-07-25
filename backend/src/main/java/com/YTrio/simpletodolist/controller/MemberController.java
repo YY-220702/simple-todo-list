@@ -17,7 +17,7 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
-@RequestMapping("/hello")
+@RequestMapping("/api")
 public class MemberController {
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
@@ -32,7 +32,7 @@ public class MemberController {
         return ResponseEntity.ok("hello");
     }
 
-    @PostMapping("/login")
+    @PostMapping("/v1/login")
     public ResponseEntity<TokenDto> login(@Valid @RequestBody LoginDto loginDto) {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword());
